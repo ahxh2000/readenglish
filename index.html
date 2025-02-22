@@ -44,10 +44,10 @@
         
         class Ball {
             constructor() {
-                this.radius = 10 + Math.random()*20;
+                this.radius = 8 + Math.random()*16;
                 this.mass = this.radius * 0.8;
                 this.color = `hsl(${Math.random()*360}, 70%, 60%)`;
-                this.x = canvas.width/2 + (Math.random() - 0.5) * 200;  // 在中间区域随机分布
+                this.x = canvas.width/2 + (Math.random() - 0.5) * 300;
                 this.y = window.innerHeight * 0.75 - this.radius;
                 this.vy = 0;
                 this.isResting = true;  // 初始状态设为静止
@@ -93,7 +93,7 @@
 
         // 修改初始化顺序
         resizeCanvas();  // 先设置画布尺寸和baseY
-        const balls = Array.from({length: 30}, () => new Ball());  // 再创建小球
+        const balls = Array.from({length: 290}, () => new Ball());  // 从30改为90
         window.addEventListener('resize', resizeCanvas);
 
         // 音频处理
